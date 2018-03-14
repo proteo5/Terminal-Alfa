@@ -1,0 +1,75 @@
+﻿@page
+@{
+    ViewData["Title"] = "Usuarios - Agregar";
+}
+@section ScriptsHeader{
+
+}
+@section ContentHeader{
+    <h1>
+        Administracin de Usuarios
+        <small>Agregar Usuario</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li>Admin</li>
+        <li><a href="/admin/usuarios">Usuarios</a></li>
+        <li class="active">Agregar</li>
+    </ol>
+}
+@section Scripts{
+    <script src="~/js/admin/usuario_add.js"></script>
+}
+<div class="row" id="form-data">
+    <div class="col-sm-8 col-sm-offset-2">
+        <!-- Horizontal Form -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title"><i class="fa fa-user"></i> Usuario</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="txtUsuario" class="col-sm-2 control-label">Usuario</label>
+
+                        <div class="col-sm-10">
+                            <input v-model="Datos.Usuario" v-on:keyup.enter="focusUsuario" type="text" class="form-control" id="txtUsuario" placeholder="Usuario" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNombres" class="col-sm-2 control-label">Nombre</label>
+
+                        <div class="col-sm-10">
+                            <input v-model="Datos.Nombre" v-on:keyup.enter="focusNombres" type="text" class="form-control" id="txtNombres" placeholder="Nombre" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtApellidos" class="col-sm-2 control-label">Apellidos</label>
+
+                        <div class="col-sm-10">
+                            <input v-model="Datos.Apellidos" v-on:keyup.enter="focusApellidos" type="text" class="form-control" id="txtApellidos" placeholder="Apellidos" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCorreo" class="col-sm-2 control-label">Correo Electrónico</label>
+
+                        <div class="col-sm-10">
+                            <input v-model="Datos.Email" type="text" class="form-control" id="txtCorreo" placeholder="Correo Electrónico" maxlength="200">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <div class="pull-right">
+                        <button v-on:click="Crear" type="submit" class="btn btn-primary ">Agregar Usuario</button>
+                        <a href="/admin/usuarios" class="btn btn-default ">Cancelar</a>
+                    </div>
+                </div>
+                <!-- /.box-footer -->
+            </div>
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
